@@ -6,8 +6,8 @@ test.beforeAll("Run BEFORE all", async ({request}) => {
     const tokenResponse = await request.post("https://conduit-api.bondaracademy.com/api/users/login", {
         data: {
             "user": {
-                "email": "pythonqa5@gmail.com",
-                "password": "@$4ca*aGV$"
+                "email": process.env.EMAIL || "",
+                "password": process.env.PASSWORD || ""
             }
         }
     });

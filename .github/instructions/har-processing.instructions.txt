@@ -31,7 +31,7 @@ const response = JSON.parse(entry.response.content.text)
 ### 2. URL Path Extraction
 ```typescript
 // Extract API path from full URL
-// From: "https://conduit-api.bondaracademy.com/api/articles"
+// From: "https://api.realworld.show/api/articles"
 // To: "/articles"
 const apiPath = new URL(url).pathname.replace('/api', '')
 ```

@@ -11,13 +11,13 @@ console.log(`Running test in ${env} environment`);
 
 const config = {
     apiUrl: "https://conduit-api.bondaracademy.com/api",
-    userEmail: process.env.EMAIL || "pythonqa5@gmail.com",
-    userPassword: process.env.PASSWORD || "@$4ca*aGV$" 
+    userEmail: process.env.EMAIL || "",
+    userPassword: process.env.PASSWORD || ""
 };
 
 if (env === 'qa') {
-    config.userEmail = "pythonqa5@gmail.com";
-    config.userPassword = "@$4ca*aGV$"
+    config.userEmail = process.env.EMAIL || "";
+    config.userPassword = process.env.PASSWORD || ""
 }
 
 export {config}
