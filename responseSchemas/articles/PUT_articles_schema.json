@@ -1,0 +1,75 @@
+{
+  "type": "object",
+  "properties": {
+    "article": {
+      "type": "object",
+      "properties": {
+        "slug": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "body": {
+          "type": "string"
+        },
+        "tagList": {
+          "type": "array"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "favorited": {
+          "type": "boolean"
+        },
+        "favoritesCount": {
+          "type": "integer"
+        },
+        "author": {
+          "type": "object",
+          "properties": {
+            "username": {
+              "type": "string"
+            },
+            "bio": {
+              "type": "null"
+            },
+            "image": {
+              "type": "string"
+            },
+            "following": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "username",
+            "bio",
+            "image",
+            "following"
+          ]
+        }
+      },
+      "required": [
+        "slug",
+        "title",
+        "description",
+        "body",
+        "tagList",
+        "createdAt",
+        "updatedAt",
+        "favorited",
+        "favoritesCount",
+        "author"
+      ]
+    }
+  },
+  "required": [
+    "article"
+  ]
+}
