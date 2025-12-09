@@ -10,7 +10,7 @@ const env = processENV || 'dev';
 console.log(`Running test in ${env} environment`);
 
 const config = {
-    apiUrl: "https://conduit-api.bondaracademy.com/api",
+    apiUrl: "http://localhost:8000/api",
     userEmail: process.env.EMAIL || "",
     userPassword: process.env.PASSWORD || ""
 };

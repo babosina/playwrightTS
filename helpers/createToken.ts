@@ -11,6 +11,7 @@ export async function createToken(email: string, password: string) {
     try {
         const tokenResponse = await api
             .path("/users/login")
+            .clearAuth()
             .body({
                 "user": {
                     "email": email,
