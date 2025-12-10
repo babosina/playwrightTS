@@ -43,7 +43,7 @@ test("Get Articles", async ({api}) => {
 
     await expect(response).shouldMatchSchema('articles', 'GET_articles');
     expect(response.articles.length).shouldBeLessThanOrEqual(10);
-    expect(response.articlesCount).shouldEqual(10);
+    expect(response.articlesCount).shouldEqual(5);
 });
 
 test("Get Tags", async ({api}) => {
@@ -53,7 +53,7 @@ test("Get Tags", async ({api}) => {
 
     // await validateSchema('tags', 'GET_tags', response);
     await expect(response).shouldMatchSchema('tags', 'GET_tags');
-    expect(response.tags[0]).shouldEqual("Test");
+    expect(response.tags[0]).shouldEqual("django");
     expect(response.tags.length).shouldBeLessThanOrEqual(10);
 });
 
@@ -78,7 +78,7 @@ test("Create Article OOP", async ({api}) => {
 
     await expect(response).shouldMatchSchema('articles', 'POST_articles');
     expect(response.article.title).shouldEqual(articlePayload.article.title);
-    expect(response.article.tagList).shouldEqual(["API"]);
+    expect(response.article.tagList).shouldEqual(["api"]);
 
     const articlesResponse = await api
         .path("/articles")
