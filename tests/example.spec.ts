@@ -21,7 +21,7 @@ test('Get Test Tags', async ({request}) => {
     const tagsResponseJson = await tagsResponse.json();
 
     expect(tagsResponse.status()).toEqual(200);
-    expect(tagsResponseJson.tags[0]).toEqual("Test");
+    expect(tagsResponseJson.tags[0]).toEqual("django");
     expect(tagsResponseJson.tags.length).toBeLessThanOrEqual(10);
 });
 
@@ -31,7 +31,7 @@ test("Get Articles List", async ({request}) => {
 
     expect(response.status()).toEqual(200);
     expect(responseJson.articles.length).toBeLessThanOrEqual(10);
-    expect(responseJson.articles[0].title).toEqual("Discover Bondar Academy: Your Gateway to Efficient Learning");
+    expect(responseJson.articles[0].title).toEqual("Understanding Django ORM");
 });
 
 test("Create Article", async ({request}) => {
