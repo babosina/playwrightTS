@@ -12,6 +12,7 @@ test.beforeAll("Run BEFORE all", async ({request}) => {
         }
     });
     const tokenResponseJson = await tokenResponse.json();
+    console.log(tokenResponseJson.user.token);
     authToken = tokenResponseJson.user.token;
 });
 
@@ -36,7 +37,7 @@ test("Get Articles List", async ({request}) => {
 
 test("Create Article", async ({request}) => {
 
-    const response = await request.post("http://localhost:8000/api/articles/", {
+    const response = await request.post("http://localhost:8000/api/articles", {
         headers: {
             "Authorization": `Token ${authToken}`
         },
@@ -46,7 +47,7 @@ test("Create Article", async ({request}) => {
                 "description": "Amazing features",
                 "body": "Come use Postman for the API testing with us!",
                 "tagList": [
-                    "API"
+                    "api"
                 ]
             }
         }
@@ -56,7 +57,7 @@ test("Create Article", async ({request}) => {
 
     expect(response.status()).toEqual(201);
     expect(responseJson.article.title).toEqual("Testing APIs with Postman from Code");
-    expect(responseJson.article.tagList).toEqual(["API"]);
+    expect(responseJson.article.tagList).toEqual(["api"]);
 
     const articlesResponse = await request.get("http://localhost:8000/api/articles?limit=10&offset=0", {
         headers: {
@@ -79,7 +80,7 @@ test("Create Article", async ({request}) => {
 
 test("Create, Update and Delete Article", async ({request}) => {
 
-    const response = await request.post("http://localhost:8000/api/articles/", {
+    const response = await request.post("http://localhost:8000/api/articles", {
         headers: {
             "Authorization": `Token ${authToken}`
         },
