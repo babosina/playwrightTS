@@ -1,6 +1,7 @@
 # Playwright API Testing Framework
 
-A TypeScript-based API testing framework built with Playwright, featuring custom fixtures, schema validation, and comprehensive test utilities.
+* A TypeScript-based API testing framework built with Playwright, featuring custom fixtures, schema validation, and comprehensive test utilities.
+* BE and FE are deployed locally using https://github.com/babosina/realworld-django-rest-framework-angular 
 
 ## Project Overview
 
@@ -77,7 +78,7 @@ The tests are configured to run against `http://localhost:8000/api`. Ensure your
 If using Docker:
 ```bash
 # Example Docker command (adjust based on your setup)
-docker run -p 8000:8000 <your-api-image>
+docker compose up -d
 ```
 
 ### 5. Verify Configuration
@@ -242,15 +243,3 @@ Edit `api-test.config.ts` to modify:
 - Verify credentials in `.env` file
 - Check if the `/users/login` endpoint is accessible
 - Ensure the backend API is configured correctly
-
-## Contributing
-
-When adding new tests:
-1. Place test files in the `tests/` directory
-2. Use the custom fixtures from `utils/fixtures.ts`
-3. Add response schemas to `responseSchemas/` as needed
-4. Follow the existing naming conventions
-
-## License
-
-ISC
